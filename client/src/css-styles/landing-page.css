@@ -1,0 +1,59 @@
+.landing-page-banner {
+    font-family: "Arial Black", Gadget, sans-serif;
+    background-color: #007CC7;
+    width:100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-section-one {
+    height: 600px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-section-one-explanation {
+  height: 400px;
+  width: 50%;
+  /* position: absolute; */
+  z-index: 2;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr, 2fr;
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.rml-explanation-header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-left: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20%;
+    padding-right: 60%;
+}
+.rml-explanation-body {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-left: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rml-explanation-image {
+   grid-column: 2/3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.rml-explanation-image-1 {
+    height: 300px;
+    width: 450px;
+}

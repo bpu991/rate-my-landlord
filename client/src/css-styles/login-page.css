@@ -1,0 +1,78 @@
+.login-page-body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.login-container {
+    grid-row: 2/3;
+    display: flex;
+    justify-content: flex-end;
+}
+.login-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+  height: 35vh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.login-container {
+  padding: 2px 16px;
+}
+/* On mouse-over, add a deeper shadow */
+.login-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.house-group {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+}
+.house-png {
+    height: 10vh;
+}
+.email-group { 
+  grid-row: 3/4;
+  position:relative; 
+  /* margin-bottom:45px;  */
+}
+
+/*.password-group 			  { 
+  grid-row: 3;
+  position:relative; 
+  margin-bottom:45px; 
+} */
+
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+
+label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
