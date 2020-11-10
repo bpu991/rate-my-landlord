@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import searchLandlords  from "../actions/search_actions";
 import {getAllLandlords} from "../actions/landlord_actions";
-
+import "../css-styles/search-bar.css"
 const useStyles = makeStyles((theme) => ({
     space: {
         marginTop: 100,
@@ -82,7 +82,7 @@ const Search = () => {
 
     return (
         <>
-            <div className="search-component-container">
+            {/* <div className="search-component-container">
                 <input type="search" onChange={handleInput} value={input} id="search" placeholder="Search" autocomplete="off"></input>
                 <div className="search-bar-choices-container">
                     {suggestions.map(suggestion =>
@@ -91,7 +91,18 @@ const Search = () => {
                         </div>
                     )}
                 </div>
-            </div>
+            </div> */}
+            <div class="search-bar">
+                <input type="search" name="search" onChange={handleInput} value={input} id="search" placeholder="Search for landlord..." autocomplete="off" required />
+                    <div class="search-btn" >
+                        {suggestions.map(suggestion =>
+                            <div className="searchbar-choice-div" key={suggestion.id}>
+                                <a className="searchbar-choice-link" href={`/landlords/${suggestion.id}`}>{suggestion.fullName}</a>
+                            </div>
+                        )}
+                    </div>
+            </div>     
+            
         </>
     );
 }

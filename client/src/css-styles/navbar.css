@@ -1,0 +1,6 @@
+.navbar-main {
+    height: 60px;
+    background-color: #07518A;
+    display: flex;
+    align-items: end;
+}

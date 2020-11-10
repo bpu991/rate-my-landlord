@@ -8,7 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-import housepng from "../images/house.png"
+// import housepng from "../images/house.png"
 import { userActions } from "../actions/user_actions";
 
 const useStyles = makeStyles((theme) => ({
@@ -99,7 +99,7 @@ const SignIn = () => {
                 <div className="login-card">
                     <form onSubmit={handleSubmit}>
                         <div className="house-group">
-                            <img src={housepng} className="house-png"/>
+                            {/* <img src={housepng} className="house-png"/> */}
                         </div>
                         <div className="email-group">
                             <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)}/>

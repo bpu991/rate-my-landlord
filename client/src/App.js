@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core/styles";
 
 import UserList from './components/UsersList';
+import NavBar from "./components/NavBar";
 import SignIn from "./components/Signin";
 import ReviewForm from "./components/ReviewForm";
 import LandlordProfile from "./components/LandlordProfile";
