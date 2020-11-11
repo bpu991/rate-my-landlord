@@ -56,10 +56,11 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        backgroundColor: blue
+        
     },
     drawerPaper: {
         width: drawerWidth,
+        backgroundColor: "blue"
     },
     drawerHeader: {
         display: 'flex',

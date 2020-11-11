@@ -1,0 +1,53 @@
+.profile-page-main {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1.5fr 0.5fr 0.5fr;
+    background-color: #F4F8F7;
+}
+
+.column-one{
+    background-image: url('../images/sunset-city.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.column-two {
+    background-image: url('../images/sunset-city.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.column-three {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    overflow: scroll;    
+}
+
+.profile-header {
+    font-size: 25px;
+    padding-left: 5%;
+}
+
+.profile-rating {
+    padding-left: 5%;
+}
+.col-three-content {
+    display: flex;
+    justify-content: center;
+}
+
+.column-four {
+    background-image: url('../images/sunset-city.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.column-five{
+    background-image: url('../images/sunset-city.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
