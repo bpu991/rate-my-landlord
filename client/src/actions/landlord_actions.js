@@ -26,4 +26,13 @@ export const getAllLandlords = () => async (dispatch) => {
     }
 }
 
+export const landlordsInYourCity = (cityId, userId) => async (dispatch) => {
+
+    const res = await fetch(`/api/landlords/city/${cityId}/${userId}`);
+    if (res.ok) {
+        const landlords = await res.json();
+        dispatch(setLandlord(landlords))
+    }
+}
+
 

@@ -1,8 +1,10 @@
 import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import "../css-styles/navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
+import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -13,10 +15,14 @@ import Toolbar from '@material-ui/core/Toolbar';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { blue } from "@material-ui/core/colors";
+import { userActions } from "../actions/user_actions";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
+    button: {
+        fontWeight: "500"
+    },
     root: {
         display: 'flex',
     },
@@ -46,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
         width: drawerWidth,
-        backgroundColor: "#BFF5FE"
+        backgroundColor: "#F4F8F7"
     },
     drawerHeader: {
         display: 'flex',
@@ -76,10 +82,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavBar = () => {
+    const history = useHistory();
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
-
+    const loggedOut = useSelector((state) => !state.authentication.user);
+    const dispatch = useDispatch()
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -87,42 +95,80 @@ const NavBar = () => {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+
+    const handleSignout = () => {
+        dispatch(userActions.logout())
+        history.push('/')
+    };
+
     return (
         <div className='navbar-main'>
-            <Toolbar>
-                <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={handleDrawerOpen}
-                    edge="start"
-                    className={clsx(classes.menuButton, open && classes.hide)}
+            <div className='navbar-col-1'>
+                {/* <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        className={clsx(classes.menuButton, open && classes.hide)}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Toolbar>
+                <Drawer
+                    className={classes.drawer}
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}
                 >
-                    <MenuIcon />
-                </IconButton>
-            </Toolbar>
-            <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="left"
-                open={open}
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-            >
-                <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <List>
-                    <IconButton component={NavLink} to='/login'>
-                        <GroupIcon />
-                        <h6>  View all landlords</h6>
-                    </IconButton>
-                </List>
-            </Drawer>
+                    <div className={classes.drawerHeader}>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                        </IconButton>
+                    </div>
+                    <Divider />
+                    <List>
+                        <IconButton component={NavLink} to='/login'>
+                            <GroupIcon />
+                            <h6>  View all landlords</h6>
+                        </IconButton>
+                    </List>
+                </Drawer> */}
+            </div>
+
+            <div className='navbar-col-2'>
+
+            </div>
+
+            <div className='navbar-col-3'>
+
+            </div>
+
+            <div className='navbar-col-4'>
+
+            </div>
+
+            <div className='navbar-col-5'>
+
+            </div>
+
+            <div className='navbar-col-6'>
+
+            </div>
             
+            <div className='navbar-col-7'>
+                {loggedOut ? (
+                    <>
+                        <Button className={classes.button} size="Large">Login</Button>
+                        <Button className={classes.button} size="Large">Signup</Button>
+                    </>
+                ) : (
+                        <Button className={classes.button} onClick={handleSignout} size="Large">Logout</Button>
+                )}
+            </div>
         </div>
     )
 }

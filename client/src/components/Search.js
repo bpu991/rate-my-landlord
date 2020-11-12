@@ -34,7 +34,6 @@ const Search = () => {
     const classes = useStyles();
     const [input, setInput] = useState('')
     const suggestions = useSelector(state => state.search)
-    const landlord = useSelector(state => state.entities.landlordPages.landlords);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -48,16 +47,6 @@ const Search = () => {
 
     return (
         <>
-            {/* <div className="search-component-container">
-                <input type="search" onChange={handleInput} value={input} id="search" placeholder="Search" autocomplete="off"></input>
-                <div className="search-bar-choices-container">
-                    {suggestions.map(suggestion =>
-                        <div className="searchbar-choice-div" key={suggestion.id}>
-                            <a className="searchbar-choice-link" href={`/landlords/${suggestion.id}`}>{suggestion.fullName}</a>
-                        </div>
-                    )}
-                </div>
-            </div> */}
             <div className="search-bar">
                 <input className="searchbar-input" type="search" name="search" onChange={handleInput} value={input} id="search" placeholder="Search for landlord ... 🔎" autocomplete="off" required />
                     <div className="search-btn" >
@@ -65,28 +54,14 @@ const Search = () => {
                         <Card className={classes.root} square={true}>
                             <div className='search-suggestion'>
                                 <CardContent>
-                                        <Typography className={classes.title} color="textSecondary">
-                                            {/* <div className="searchbar-choice-div" key={suggestion.id}>
-                                                <a className="searchbar-choice-link" href={`/landlords/${suggestion.id}`}>{suggestion.fullName}</a>
-                                            </div> */}
-                                            <Link href={`/landlords/${suggestion.id}`}>
-                                                {suggestion.fullName}
-                                            </Link>
+                                    <Typography className={classes.title} color="textSecondary">
+                                        <Link href={`/landlords/${suggestion.id}`}>
+                                            {suggestion.fullName}
+                                        </Link>
                                     </Typography>
-                                    {/* <Typography className={classes.pos} color="textSecondary">
-                                        adjective
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        well meaning and kindly.
-                                    <br />
-                                    {'"a benevolent smile"'}
-                                    </Typography> */}
                                 </CardContent>
                             </div>
                         </Card>
-                            // <div className="searchbar-choice-div" key={suggestion.id}>
-                            //     <a className="searchbar-choice-link" href={`/landlords/${suggestion.id}`}>{suggestion.fullName}</a>
-                            // </div>
                         )}
                     </div>
             </div>     

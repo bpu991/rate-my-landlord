@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 1.5fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     background-color: #F4F8F7;
 }
 
@@ -13,13 +13,13 @@
     overflow: hidden;
 }
 
-.column-two {
+/* .column-two {
     background-image: url('../images/sunset-city.png');
     background-position: center;
     background-size: cover;
     overflow: hidden;
-}
-.column-three {
+} */
+.column-two {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 1fr;
@@ -39,15 +39,15 @@
     justify-content: center;
 }
 
-.column-four {
+.column-three {
     background-image: url('../images/sunset-city.png');
     background-position: center;
     background-size: cover;
     overflow: hidden;
 }
-.column-five{
+/* .column-five{
     background-image: url('../images/sunset-city.png');
     background-position: center;
     background-size: cover;
     overflow: hidden;
-}
+} */

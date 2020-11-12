@@ -20,7 +20,8 @@ import '../css-styles/profile-page.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 850,
+        minWidth: 800,
+        maxWidth: 900,
     },
     title: {
         fontSize: 20,
@@ -43,21 +44,20 @@ const useStyles = makeStyles((theme) => ({
 
 const LandlordProfile = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
 
     const profile = useSelector(state => state.entities.landlordPages);
     const reviews = useSelector(state => state.entities.reviews.reviews);
     const loggedIn = useSelector(state => state.authentication.user);
     const params = useParams();
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getSpecificLandlord(params.landlordId))
-    }, [dispatch])
-
-    useEffect(() => {
         dispatch(getReview(params.landlordId))
     }, [dispatch])
+
+    // useEffect(() => {
+    //     dispatch(getReview(params.landlordId))
+    // }, [dispatch])
 
     
 
@@ -68,10 +68,10 @@ const LandlordProfile = () => {
                 <div className='column-one'>
 
                 </div>
-                <div className='column-two'>
+                {/* <div className='column-two'>
 
-                </div>
-                <div className='column-three'>
+                </div> */}
+                <div className='column-two'>
                     <div className='col-three-header'>
                         {profile && (
                                 <>
@@ -123,12 +123,12 @@ const LandlordProfile = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='column-four'>
+                <div className='column-three'>
 
                 </div>
-                <div className='column-five'>
+                {/* <div className='column-five'>
 
-                </div>
+                </div> */}
                 
                 
             </div>

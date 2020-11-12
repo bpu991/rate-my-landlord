@@ -12,6 +12,7 @@ import UserList from './components/UsersList';
 import NavBar from "./components/NavBar";
 import SignIn from "./components/Signin";
 import ReviewForm from "./components/ReviewForm";
+import LandlordsInYourCity from "./components/LandlordsInYourCity"
 import LandlordProfile from "./components/LandlordProfile";
 import { themeObj } from './theme'
 import SignUp from "./components/SignUp";
@@ -58,6 +59,10 @@ function App() {
 
                 <Route path="/createform">
                     <ReviewForm />
+                </Route>
+
+                <Route path="/hello">
+                    <LandlordsInYourCity/>
                 </Route>
 
                 <Route path="/">

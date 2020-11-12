@@ -44,81 +44,81 @@ const SignIn = () => {
     };
 
     return (
-        // <Container component='main' maxWidth='xs'>
-        //     <div className={classes.space}>
-        //         <Typography variant='h5'>Sign in</Typography>
-        //         <form onSubmit={handleSubmit}>
-        //             {(err) ? (
-        //                 <Typography variant="caption" color="error">
-        //                     {err.errors}
-        //                 </Typography>
-        //             ) : (null)}
-        //             <TextField
-        //                 variant='outlined'
-        //                 margin='normal'
-        //                 required
-        //                 fullWidth
-        //                 id='email'
-        //                 label='Email Address'
-        //                 name='email'
-        //                 autoComplete='email'
-        //                 autoFocus
-        //                 value={email}
-        //                 onChange={(e) => setEmail(e.target.value)}
-        //             />
-        //             <TextField
-        //                 variant='outlined'
-        //                 margin='normal'
-        //                 required
-        //                 fullWidth
-        //                 name='password'
-        //                 label='Password'
-        //                 type='password'
-        //                 id='password'
-        //                 autoComplete='current-password'
-        //                 value={password}
-        //                 onChange={(e) => setPassword(e.target.value)}
-        //             />
-        //             <Button
-        //                 className={classes.button}
-        //                 type='submit'
-        //                 fullWidth
-        //                 variant='contained'
-        //                 color='primary'
-        //                 size='large'>
-        //                 Sign In
-        //             </Button>
-        //             <Link component={NavLink} to='/signup' variant='body2'>
-        //                 Don't have an account? Sign up
-        //             </Link>
-        //         </form>
-        //     </div>
-        // </Container>
-        <div className="login-page-body">
-            <div className="login-container">
-                <div className="login-card">
-                    <form onSubmit={handleSubmit}>
-                        <div className="house-group">
-                            {/* <img src={housepng} className="house-png"/> */}
-                        </div>
-                        <div className="email-group">
-                            <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)}/>
-                            <span className="highlight"></span>
-                            <span className="bar"></span>
-                            <label>Email</label>
-                        </div>
-
-                        {/* {<div className="password-group">
-                            <input type="text" required value={password} onChange={(e) => setPassword(e.target.value)}/>
-                            <span className="highlight"></span>
-                            <span className="bar"></span>
-                            <label>Password</label>
-                        </div> */}
-                        {/* <button type="submit"></button> */}
-                    </form>
-                </div>
+        <Container component='main' maxWidth='xs'>
+            <div className={classes.space}>
+                <Typography variant='h5'>Sign in</Typography>
+                <form onSubmit={handleSubmit}>
+                    {(err) ? (
+                        <Typography variant="caption" color="error">
+                            {err.errors}
+                        </Typography>
+                    ) : (null)}
+                    <TextField
+                        variant='outlined'
+                        margin='normal'
+                        required
+                        fullWidth
+                        id='email'
+                        label='Email Address'
+                        name='email'
+                        autoComplete='email'
+                        autoFocus
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <TextField
+                        variant='outlined'
+                        margin='normal'
+                        required
+                        fullWidth
+                        name='password'
+                        label='Password'
+                        type='password'
+                        id='password'
+                        autoComplete='current-password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Button
+                        className={classes.button}
+                        type='submit'
+                        fullWidth
+                        variant='contained'
+                        color='primary'
+                        size='large'>
+                        Sign In
+                    </Button>
+                    <Link component={NavLink} to='/signup' variant='body2'>
+                        Don't have an account? Sign up
+                    </Link>
+                </form>
             </div>
-        </div>
+        </Container>
+        // <div className="login-page-body">
+        //     <div className="login-container">
+        //         <div className="login-card">
+        //             <form onSubmit={handleSubmit}>
+        //                 <div className="house-group">
+        //                     {/* <img src={housepng} className="house-png"/> */}
+        //                 </div>
+        //                 <div className="email-group">
+        //                     <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)}/>
+        //                     <span className="highlight"></span>
+        //                     <span className="bar"></span>
+        //                     <label>Email</label>
+        //                 </div>
+
+        //                 {/* {<div className="password-group">
+        //                     <input type="text" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+        //                     <span className="highlight"></span>
+        //                     <span className="bar"></span>
+        //                     <label>Password</label>
+        //                 </div> */}
+        //                 {/* <button type="submit"></button> */}
+        //             </form>
+        //         </div>
+        //     </div>
+        // </div>
     );
 };
 

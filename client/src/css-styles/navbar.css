@@ -1,6 +1,38 @@
 .navbar-main {
     height: 64px;
     background-color: #07518A;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
+   
+}
+
+.navbar-col-1 {
+    grid-column: 1/2;
     display: flex;
     align-items: end;
+}
+
+.navbar-col-2 {
+    
+}
+
+.navbar-col-3 {
+    
+}
+
+.navbar-col-4 {
+    
+}
+
+.navbar-col-5 {
+    
+}
+
+.navbar-col-6 {
+    
+}
+
+.navbar-col-7 {
+    display: flex;
+    justify-content: center;
 }
