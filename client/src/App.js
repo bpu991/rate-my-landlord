@@ -61,7 +61,7 @@ function App() {
                     <ReviewForm />
                 </Route>
 
-                <Route path="/hello">
+                <Route path="/:cityId/:userId">
                     <LandlordsInYourCity/>
                 </Route>
 

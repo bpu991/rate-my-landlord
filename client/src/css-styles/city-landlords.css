@@ -1,0 +1,58 @@
+.city-landlords-main {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.city-landlords-col-1 {
+    background-image: url('../images/city-life-crop-1.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.city-landlords-col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+}
+
+.letter-category {
+    padding-left: 3%;
+    color: #4D8ABE;
+}
+.col-2-left {
+    display: flex;
+    justify-content: center;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.list-card-content {
+   /* display: grid;
+   grid-template-columns: 1fr 1fr;
+    */
+   display: flex;
+   flex-direction: row;
+    
+}
+
+/* .list-card-name {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.list-card-rating {
+    grid-column: 2/3;
+} */
+
+.col-2-right {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.city-landlords-col-3 {
+    background-image: url('../images/city-life-crop-2.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}

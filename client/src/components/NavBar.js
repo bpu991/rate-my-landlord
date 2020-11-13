@@ -6,6 +6,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -82,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavBar = () => {
+    const user = useSelector(state => state.authentication.user)
     const history = useHistory();
     const classes = useStyles();
     const theme = useTheme();
@@ -166,7 +168,13 @@ const NavBar = () => {
                         <Button className={classes.button} size="Large">Signup</Button>
                     </>
                 ) : (
+                    <>
+                        <IconButton component={NavLink} to={`/${user.city_id}/${user.id}`} className={classes.button} size="Large">
+                            <LocationCityIcon />
+                        </IconButton>
                         <Button className={classes.button} onClick={handleSignout} size="Large">Logout</Button>
+                        
+                    </>
                 )}
             </div>
         </div>
