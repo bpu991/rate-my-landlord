@@ -1,28 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { landlordsInYourCity } from '../actions/landlord_actions';
 import NavBar from "./NavBar";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import Paper from '@material-ui/core/Paper';
+
 import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import CardActions from '@material-ui/core/CardActions';
+
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
 import "../css-styles/city-landlords.css";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        minWidth: 500,
-        maxWidth: 500,
+    rootRight: {
+        width: "160%",
         marginBottom: 8
     },
+    rootLeft: {
+        width: "180%",
+        marginBottom: 8
+    },
+    rootTop: {
+        width: "83%",
+        marginBottom: 8
+    },
+    rootTitle: {
+        fontSize: 30,
+        fontWeight: "bold",
+        color: "#4F89BE"
+    }, 
     title: {
         fontSize: 20,
         fontWeight: "bold"
@@ -45,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 const LandlordsInYourCity = () => {
     const classes = useStyles();
     const user = useSelector(state => state.authentication.user);
+   
     const aLandlords = useSelector(state => state.entities.landlordPages.aLandlordsInYourCity)
     const bLandlords = useSelector(state => state.entities.landlordPages.bLandlordsInYourCity)
     const cLandlords = useSelector(state => state.entities.landlordPages.cLandlordsInYourCity)
@@ -73,24 +84,47 @@ const LandlordsInYourCity = () => {
     const zLandlords = useSelector(state => state.entities.landlordPages.zLandlordsInYourCity)
     const dispatch = useDispatch();
 
+    
     useEffect(() => {
         if(user) {
-            console.log('asdfas:', user)
             dispatch(landlordsInYourCity(user.city_id, user.id)) 
         }
     }, [dispatch, user])
+
+    
+    if(!user) {
+        return (
+            <Redirect to='/' />
+        )
+    }
 
     return (
         <>
             <NavBar />
             <div className='city-landlords-main'>
                 <div className='city-landlords-col-1'>
+                    
 
                 </div>
                 <div className='city-landlords-col-2'>
+                    <div className='col-2-top-left'>
+                        <Card className={classes.rootTop}>
+                            {user && (
+                                <Typography component="h1" className={classes.rootTitle}>These are all the landlords in {user.city}:</Typography>
+                            )}
+                        </Card>  
+                    </div>
+                    <div className='col-2-top-right'>
+                        <Card className={classes.rootTop}>
+                            <Link component={NavLink} to='/addlandlord' variant='body2'>
+                                <Typography component="h1" className={classes.rootTitle}>Don't see your landlord? Add them here!</Typography>
+                            </Link>
+                        </Card>
+                    </div>
+                    
                     <div className='col-2-left'>
                         <div>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>A</h1>
                                 </div>
@@ -112,7 +146,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card> 
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>B</h1>
                                 </div>
@@ -134,7 +168,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card> 
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>C</h1>
                                 </div>
@@ -156,7 +190,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card> 
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>D</h1>
                                 </div>
@@ -178,7 +212,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card> 
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>E</h1>
                                 </div>
@@ -200,7 +234,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>F</h1>
                                 </div>
@@ -222,7 +256,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>G</h1>
                                 </div>
@@ -244,7 +278,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>H</h1>
                                 </div>
@@ -266,7 +300,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>I</h1>
                                 </div>
@@ -288,7 +322,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>J</h1>
                                 </div>
@@ -310,7 +344,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>K</h1>
                                 </div>
@@ -332,7 +366,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>L</h1>
                                 </div>
@@ -354,7 +388,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>M</h1>
                                 </div>
@@ -382,7 +416,7 @@ const LandlordsInYourCity = () => {
                         
                     <div className='col-2-right'>
                         <div>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>N</h1>
                                 </div>
@@ -404,7 +438,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>O</h1>
                                 </div>
@@ -426,7 +460,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>P</h1>
                                 </div>
@@ -448,7 +482,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>Q</h1>
                                 </div>
@@ -470,7 +504,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>R</h1>
                                 </div>
@@ -492,7 +526,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>S</h1>
                                 </div>
@@ -514,7 +548,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>T</h1>
                                 </div>
@@ -536,7 +570,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>U</h1>
                                 </div>
@@ -558,7 +592,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>V</h1>
                                 </div>
@@ -580,7 +614,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>W</h1>
                                 </div>
@@ -602,7 +636,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>X</h1>
                                 </div>
@@ -624,7 +658,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>Y</h1>
                                 </div>
@@ -646,7 +680,7 @@ const LandlordsInYourCity = () => {
                                     </div>
                                 )))}
                             </Card>
-                            <Card className={classes.root}>
+                            <Card className={classes.rootRight}>
                                 <div className='letter-category'>
                                     <h1>Z</h1>
                                 </div>

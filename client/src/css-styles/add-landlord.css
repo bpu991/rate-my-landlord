@@ -1,0 +1,16 @@
+.add-landlord-main {
+    width: 100%;
+    height: 96vh;
+    background-image: url('../images/brick-city.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.add-landlord-col-2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}

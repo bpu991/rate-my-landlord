@@ -2,21 +2,15 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import "../css-styles/navbar.css";
 import { NavLink, useHistory } from "react-router-dom";
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import LocationCityIcon from '@material-ui/icons/LocationCity';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import GroupIcon from '@material-ui/icons/Group';
-import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
-import clsx from 'clsx';
+
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { blue } from "@material-ui/core/colors";
+
 import { userActions } from "../actions/user_actions";
+import logo from "../images/logo-flat.png"
 
 const drawerWidth = 240;
 
@@ -86,17 +80,9 @@ const NavBar = () => {
     const user = useSelector(state => state.authentication.user)
     const history = useHistory();
     const classes = useStyles();
-    const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
     const loggedOut = useSelector((state) => !state.authentication.user);
     const dispatch = useDispatch()
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
 
     const handleSignout = () => {
         dispatch(userActions.logout())
@@ -106,43 +92,13 @@ const NavBar = () => {
     return (
         <div className='navbar-main'>
             <div className='navbar-col-1'>
-                {/* <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, open && classes.hide)}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                </Toolbar>
-                <Drawer
-                    className={classes.drawer}
-                    variant="persistent"
-                    anchor="left"
-                    open={open}
-                    classes={{
-                        paper: classes.drawerPaper,
-                    }}
-                >
-                    <div className={classes.drawerHeader}>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                        </IconButton>
-                    </div>
-                    <Divider />
-                    <List>
-                        <IconButton component={NavLink} to='/login'>
-                            <GroupIcon />
-                            <h6>  View all landlords</h6>
-                        </IconButton>
-                    </List>
-                </Drawer> */}
+            
             </div>
 
             <div className='navbar-col-2'>
-
+                <a href='/'>
+                    <img className='nav-bar-logo' href='/' src={logo} />
+                </a>
             </div>
 
             <div className='navbar-col-3'>
@@ -164,13 +120,13 @@ const NavBar = () => {
             <div className='navbar-col-7'>
                 {loggedOut ? (
                     <>
-                        <Button className={classes.button} size="Large">Login</Button>
-                        <Button className={classes.button} size="Large">Signup</Button>
+                        <Button className={classes.button} component={NavLink} to='/login' size="Large">Login</Button>
+                        <Button className={classes.button} component={NavLink} to='/signup' size="Large">Signup</Button>
                     </>
                 ) : (
                     <>
                         <IconButton component={NavLink} to={`/${user.city_id}/${user.id}`} className={classes.button} size="Large">
-                            <LocationCityIcon />
+                                <LocationCityIcon size="Large"/>
                         </IconButton>
                         <Button className={classes.button} onClick={handleSignout} size="Large">Logout</Button>
                         

@@ -33,7 +33,8 @@ class User(db.Model, UserMixin):
       "id": self.id,
       "username": self.username,
       "email": self.email,
-      "city_id": self.city_id #include the city in the query if you want to get more than just the city id
+      "city_id": self.city_id, #include the city in the query if you want to get more than just the city id
+      "city": self.city.cityName
     }
   
   @classmethod
@@ -64,13 +65,14 @@ class Landlord(db.Model):
         "id": self.id,
         "fullName": self.fullName,
         "rating": self.rating,
-        "city_id": self.city_id
+        "city_id": self.city_id,
     }
   
   def search_dict(self):
     return {
       "id": self.id,
-      "fullName": self.fullName
+      "fullName": self.fullName,
+      "city": self.city.cityName
     }
 
   # def landlord_info(self):

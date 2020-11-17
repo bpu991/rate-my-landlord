@@ -4,7 +4,7 @@ import { NavLink, Redirect } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/styles";
 import Button from "@material-ui/core/Button";
-import InputLabel from '@material-ui/core/InputLabel';
+
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import TextField from "@material-ui/core/TextField";
@@ -15,16 +15,39 @@ import getCity from '../actions/city_actions'
 import { userActions } from "../actions/user_actions";
 import {getLandlordInfo} from '../actions/getInfo_actions';
 import {postLandlordReviews} from "../actions/review_actions";
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Rating from '@material-ui/lab/Rating';
+import Box from '@material-ui/core/Box';
+import writing from "../images/writing.jpg"
+
+import "../css-styles/review-form.css"
 const useStyles = makeStyles((theme) => ({
     space: {
-        marginTop: 100,
+        marginTop: 50,
+        marginBottom: 50
     },
     button: {
         paddingTop: 10,
         paddingBottom: 10,
         marginTop: 15,
-        marginBottom: 15
-    }
+        marginBottom: 15,
+        maxWidth: 100,
+    }, 
+    root: {
+        width: "150%",
+    },
+    rating : {
+        width: 400,
+    }, 
+
+    media: {
+        height: 400,
+    },
+
 }));
 
 const ReviewForm = () => {
@@ -51,75 +74,90 @@ const ReviewForm = () => {
         }
         dispatch(postLandlordReviews(form));
     };
+
     if (!landlord || !user) return null
     return (
         <Container component='main' maxWidth='xs'>
             <div className={classes.space}>
                 <Typography variant='h5'>Review</Typography>
                 <form onSubmit={handleSubmit}>
-                    <TextField
-                        variant='outlined'
-                        margin='normal'
-                        required
-                        fullWidth
-                        id='title'
-                        label='Title'
-                        name='title'
-                        autoComplete='title'
-                        autoFocus
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                    <TextField
-                        variant='outlined'
-                        margin='normal'
-                        required
-                        fullWidth
-                        id='content'
-                        label='Content'
-                        name='content'
-                        autoComplete='content'
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                    />
-                    {/* <InputLabel id="demo-simple-select-label">Landlord</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={landlordId}
-                        onChange={(e) => setLandlordId(e.target.value)}
-                    >
+                    <Card className={classes.root}>
+                            <CardMedia
+                                className={classes.media}
+                                image={writing}
+                                title="Contemplative Reptile"
+                            />
+                            <CardContent>
+                                <TextField
+                                    variant='outlined'
+                                    margin='normal'
+                                    required
+                                    fullWidth
+                                    id='title'
+                                    label='Title'
+                                    name='title'
+                                    autoComplete='title'
+                                    autoFocus
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                />
+                                <TextField
+                                    fullWidth
+                                    multiline
+                                    required
+                                    rows={4}
+                                    defaultValue="Write your review here"
+                                    variant="outlined"
+                                    id='content'
+                                    label='Content'
+                                    name='content'
+                                    autoComplete='content'
+                                    value={content}
+                                    onChange={(e) => setContent(e.target.value)}
+                                />
+                                
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    className={classes.rating}
+                                    label='rating'
+                                    value={rating}
+                                    onChange={(e) => setRating(e.target.value)}
+                                >
 
-                        {landlords && (landlords.map(landlord => (
-                            <MenuItem value={landlord.id} key={landlord.id}>{landlord.fullName}</MenuItem>
-                        )))}
-                    </Select> */}
-                    <InputLabel id="demo-simple-select-label">Rating</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)}
-                    >
-
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
-                        <MenuItem value={4}>4</MenuItem>
-                        <MenuItem value={5}>5</MenuItem>
-                    </Select>
-                    <Button
-                        className={classes.button}
-                        type='submit'
-                        fullWidth
-                        variant='contained'
-                        color='primary'
-                        size='large'>
-                        Submit
-                    </Button>
+                                    <MenuItem value={1}>1</MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                                    <MenuItem value={3}>3</MenuItem>
+                                    <MenuItem value={4}>4</MenuItem>
+                                    <MenuItem value={5}>5</MenuItem>
+                                </Select>
+                                {/* <Box component="fieldset" mb={3} borderColor="transparent">
+                                    <Typography component="legend">Controlled</Typography>
+                                    <Rating
+                                        name="simple-controlled"
+                                        value={value}
+                                        onChange={(event, newValue) => {
+                                            setValue(newValue);
+                                        }}
+                                    />
+                                </Box> */}
+                            </CardContent>
+                        <CardActions>
+                            <Button className={classes.button}
+                                type='submit'
+                                fullWidth
+                                variant='contained'
+                                color='primary'
+                                size='large'
+                                Submit>
+                                Submit
+                            </Button>
+                            
+                        </CardActions>
+                    </Card>
                 </form>
             </div>
-        </Container>
+        </Container >
     );
     
 }

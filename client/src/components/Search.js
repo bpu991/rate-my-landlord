@@ -2,16 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { makeStyles } from "@material-ui/styles";
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import Button from "@material-ui/core/Button";
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
+
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+
 import CardContent from '@material-ui/core/CardContent';
 import Link from '@material-ui/core/Link';
 import searchLandlords  from "../actions/search_actions";
@@ -56,7 +50,7 @@ const Search = () => {
                                 <CardContent>
                                     <Typography className={classes.title} color="textSecondary">
                                         <Link href={`/landlords/${suggestion.id}`}>
-                                            {suggestion.fullName}
+                                            {suggestion.fullName}, {suggestion.city}
                                         </Link>
                                     </Typography>
                                 </CardContent>

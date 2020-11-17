@@ -13,7 +13,14 @@
 }
 
 .navbar-col-2 {
-    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-bar-logo{
+    height: 45px;
+    width: 300px;
 }
 
 .navbar-col-3 {

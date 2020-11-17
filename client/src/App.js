@@ -8,15 +8,15 @@ import {
     makeStyles,
 } from "@material-ui/core/styles";
 
-import UserList from './components/UsersList';
-import NavBar from "./components/NavBar";
+
+import LandingPage from "./components/LandingPage";
+import SignUp from "./components/SignUp";
 import SignIn from "./components/Signin";
 import ReviewForm from "./components/ReviewForm";
-import LandlordsInYourCity from "./components/LandlordsInYourCity"
+import LandlordsInYourCity from "./components/LandlordsInYourCity";
+import AddLandlord from "./components/AddLandlord";
 import LandlordProfile from "./components/LandlordProfile";
 import { themeObj } from './theme'
-import SignUp from "./components/SignUp";
-import LandingPage from "./components/LandingPage";
 import { restoreCSRF } from "./actions/csrf_actions";
 import { CssBaseline } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
     const theme = createMuiTheme(themeObj);
-    const classes = useStyles();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -38,12 +37,6 @@ function App() {
     <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-            <nav>
-                <ul>
-                    {/* <li><NavLink to="/" activeclass="active">Home</NavLink></li>
-                    <li><NavLink to="/users" activeclass="active">Users</NavLink></li> */}
-                </ul>
-            </nav>
             <Switch>
                 <Route exact path='/login'>
                     <SignIn />
@@ -60,7 +53,9 @@ function App() {
                 <Route path="/createform">
                     <ReviewForm />
                 </Route>
-
+                <Route path="/addlandlord">
+                    <AddLandlord />
+                </Route>
                 <Route path="/:cityId/:userId">
                     <LandlordsInYourCity/>
                 </Route>

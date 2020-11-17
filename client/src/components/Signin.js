@@ -8,9 +8,16 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-// import housepng from "../images/house.png"
-import { userActions } from "../actions/user_actions";
+import Card from '@material-ui/core/Card';
 
+import { userActions } from "../actions/user_actions";
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+
+import login from "../images/login.jpg";
+import NavBar from "../components/NavBar";
+import "../css-styles/login-page.css";
 const useStyles = makeStyles((theme) => ({
     space: {
         marginTop: 100,
@@ -19,8 +26,19 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: 10,
         paddingBottom: 10,
         marginTop: 15,
-        marginBottom: 15
-    }
+        marginBottom: 15,
+        maxWidth: 100,
+    }, 
+    root: {
+        width: "120%",
+    },
+    rating: {
+        width: 400,
+    },
+
+    media: {
+        height: 400,
+    },
 }));
 
 const SignIn = () => {
@@ -44,81 +62,83 @@ const SignIn = () => {
     };
 
     return (
-        <Container component='main' maxWidth='xs'>
-            <div className={classes.space}>
-                <Typography variant='h5'>Sign in</Typography>
-                <form onSubmit={handleSubmit}>
-                    {(err) ? (
-                        <Typography variant="caption" color="error">
-                            {err.errors}
-                        </Typography>
-                    ) : (null)}
-                    <TextField
-                        variant='outlined'
-                        margin='normal'
-                        required
-                        fullWidth
-                        id='email'
-                        label='Email Address'
-                        name='email'
-                        autoComplete='email'
-                        autoFocus
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <TextField
-                        variant='outlined'
-                        margin='normal'
-                        required
-                        fullWidth
-                        name='password'
-                        label='Password'
-                        type='password'
-                        id='password'
-                        autoComplete='current-password'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <Button
-                        className={classes.button}
-                        type='submit'
-                        fullWidth
-                        variant='contained'
-                        color='primary'
-                        size='large'>
-                        Sign In
-                    </Button>
-                    <Link component={NavLink} to='/signup' variant='body2'>
-                        Don't have an account? Sign up
-                    </Link>
-                </form>
-            </div>
-        </Container>
-        // <div className="login-page-body">
-        //     <div className="login-container">
-        //         <div className="login-card">
-        //             <form onSubmit={handleSubmit}>
-        //                 <div className="house-group">
-        //                     {/* <img src={housepng} className="house-png"/> */}
-        //                 </div>
-        //                 <div className="email-group">
-        //                     <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)}/>
-        //                     <span className="highlight"></span>
-        //                     <span className="bar"></span>
-        //                     <label>Email</label>
-        //                 </div>
+        <>
+            <NavBar />
+            <div className='login-page-main'>
+                <div className='login-col-1'>
 
-        //                 {/* {<div className="password-group">
-        //                     <input type="text" required value={password} onChange={(e) => setPassword(e.target.value)}/>
-        //                     <span className="highlight"></span>
-        //                     <span className="bar"></span>
-        //                     <label>Password</label>
-        //                 </div> */}
-        //                 {/* <button type="submit"></button> */}
-        //             </form>
-        //         </div>
-        //     </div>
-        // </div>
+                </div>
+                <div className='login-col-2'>
+                    <Container component='main' maxWidth='xs'>
+                        <div className={classes.space}>
+                            <form onSubmit={handleSubmit}>
+                                {(err) ? (
+                                    <Typography variant="caption" color="error">
+                                        {err.errors}
+                                    </Typography>
+                                ) : (null)}
+                                <Card className={classes.root}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={login}
+                                            title="Contemplative Reptile"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="h2">
+                                                Login
+                                            </Typography>
+                                            <TextField
+                                                variant='outlined'
+                                                margin='normal'
+                                                required
+                                                fullWidth
+                                                id='email'
+                                                label='Email Address'
+                                                name='email'
+                                                autoComplete='email'
+                                                autoFocus
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}></TextField>
+                                            <TextField
+                                                variant='outlined'
+                                                margin='normal'
+                                                required
+                                                fullWidth
+                                                name='password'
+                                                label='Password'
+                                                type='password'
+                                                id='password'
+                                                autoComplete='current-password'
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                            />
+                                            <Button
+                                                className={classes.button}
+                                                type='submit'
+                                                fullWidth
+                                                variant='contained'
+                                                color='primary'
+                                                size='large'>
+                                                Sign In
+                                            </Button>
+                                        </CardContent>
+                                
+                                    <CardActions>
+                                        <Link component={NavLink} to='/signup' variant='body2'>
+                                            Don't have an account? Sign up
+                                        </Link>
+                                    </CardActions>
+                                </Card>
+                            </form>
+                        </div>
+                    </Container>
+                </div>
+                <div className='login-col-3'>
+
+                </div>
+                
+            </div>
+        </>
     );
 };
 

@@ -26,6 +26,21 @@ export const getAllLandlords = () => async (dispatch) => {
     }
 }
 
+export const addNewLandlord = (form) => async (dispatch) => {
+    const res = await fetch(`/api/landlords/create`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form)
+    });
+
+    if (res.ok) {
+        const landlord = await res.json();
+        dispatch(setLandlord(landlord))
+    }
+}
+
 export const landlordsInYourCity = (cityId, userId) => async (dispatch) => {
 
     const res = await fetch(`/api/landlords/city/${cityId}/${userId}`);

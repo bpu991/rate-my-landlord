@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from starter_app.models import db, Landlord, Review, City, User
 import itertools
 
@@ -10,6 +10,18 @@ landlord_routes = Blueprint('landlords', __name__)
 def index():
   landlords = Landlord.query.order_by(Landlord.fullName).all()
   return {"landlords": [landlord.to_dict() for landlord in landlords]}
+
+@landlord_routes.route('/create', methods=["POST"])
+def create_landlord():
+  fullName = request.json.get("name", None)
+  city = request.json.get("city", None)
+
+  landlord = Landlord(fullName=fullName, city_id=city)
+  db.session.add(landlord)
+  db.session.commit()
+
+  return 'Successfully created'
+
 
 @landlord_routes.route('/<landlord_param>') #get info for specific landlord
 def get_single_landlord(landlord_param):

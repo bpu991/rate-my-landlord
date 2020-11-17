@@ -6,5 +6,5 @@ city_routes = Blueprint('cities', __name__)
 
 @city_routes.route('/')
 def index():
-  response = City.query.all()
+  response = City.query.order_by(City.cityName).all()
   return {"cities": [city.to_dict() for city in response]}
