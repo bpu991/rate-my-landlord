@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
-
+import { push } from 'react-router-redux'
 import { makeStyles } from "@material-ui/styles";
 import Button from "@material-ui/core/Button";
 import InputLabel from '@material-ui/core/InputLabel';
@@ -54,14 +54,14 @@ const AddLandlord = () => {
             name,
             city
         }
-        dispatch(addNewLandlord(form));
+        dispatch(addNewLandlord(form)); 
     };
 
-    if (!user) {
-        return (
-            <Redirect to='/login' />
-        )
-    }
+    // if (!user) {
+    //     return (
+    //         <Redirect to='/login' />
+    //     )
+    // }
 
     return (
         <>
@@ -115,8 +115,7 @@ const AddLandlord = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 color='primary'
-                                                size='large'
-                                                href='/'
+                                                
                                                 >
                                                 Add Landlord
                                             </Button>
