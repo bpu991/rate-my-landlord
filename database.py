@@ -15,6 +15,7 @@ with app.app_context():
   angela = User(username='Angela', email='angela@aa.io', password='password', city_id=1)
   soonmi = User(username='Soon-Mi', email='soonmi@aa.io', password='password', city_id=2)
   alissa = User(username='Alissa', email='alissa@aa.io', password='password', city_id=3)
+  demo = User(username='Demo', email='demo@example.com', password='password', city_id=1)
 
   #City
   los_angeles = City(cityName='Los Angeles')
@@ -182,9 +183,5 @@ with app.app_context():
   db.session.add(zeke_zekerson)
   db.session.add(zack_pu)
   db.session.add(donkey_kong)
-
-  db.session.add(review1)
-  db.session.add(review2)
-  db.session.add(review3)
 
   db.session.commit()
