@@ -9,7 +9,7 @@ export const setCity = (city) => {
 
 const getCity = () => async (dispatch) => {
 
-    const res = await fetch(`/api/city`);
+    const res = await fetch(`/api/city/`);
     if (res.ok) {
         const city = await res.json();
         dispatch(setCity(city))

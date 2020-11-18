@@ -54,7 +54,10 @@ const AddLandlord = () => {
             name,
             city
         }
-        dispatch(addNewLandlord(form)); 
+        dispatch(addNewLandlord(form));
+        return (
+            <Redirect to='/landlords/9' />
+        )
     };
 
     // if (!user) {

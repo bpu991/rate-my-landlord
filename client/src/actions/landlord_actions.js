@@ -19,7 +19,7 @@ export const getSpecificLandlord = (landlordId) => async (dispatch) => {
 
 export const getAllLandlords = () => async (dispatch) => {
 
-    const res = await fetch(`/api/landlords`);
+    const res = await fetch(`/api/landlords/`);
     if (res.ok) {
         const landlords = await res.json();
         dispatch(setLandlord(landlords))
