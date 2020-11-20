@@ -16,16 +16,21 @@ import Divider from '@material-ui/core/Divider';
 import "../css-styles/city-landlords.css";
 
 const useStyles = makeStyles((theme) => ({
-    rootRight: {
-        width: "160%",
-        marginBottom: 8
-    },
     rootLeft: {
-        width: "180%",
-        marginBottom: 8
+        width: "100%",
+        maxWidth:'100%',
+        marginBottom: 8,
+        display: "block"
     },
+    // rootLeft: {
+    //     width: "180%",
+    //     maxWidth: '180%',
+    //     marginBottom: 8,
+    //     display: "block"
+    // },
     rootTop: {
-        width: "83%",
+        width: "60%",
+        maxWidth: '160%',
         marginBottom: 8
     },
     rootTitle: {
@@ -37,13 +42,12 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 20,
         fontWeight: "bold"
     },
+    link: {
+        paddingLeft: '3%',
+        marginBottom: 8
+    },
     pos: {
         marginBottom: 12,
-    },
-    rootGrid: {
-        flexGrow: 1,
-        justifyContent: "center",
-        alignItems: "center"
     },
     paper: {
         padding: theme.spacing(2),
@@ -92,11 +96,11 @@ const LandlordsInYourCity = () => {
     }, [dispatch, user])
 
     
-    if(!user) {
-        return (
-            <Redirect to='/' />
-        )
-    }
+    // if(!user) {
+    //     return (
+    //         <Redirect to='/' />
+    //     )
+    // }
 
     return (
         <>
@@ -107,26 +111,20 @@ const LandlordsInYourCity = () => {
 
                 </div>
                 <div className='city-landlords-col-2'>
-                    <div className='col-2-top-left'>
-                        <Card className={classes.rootTop}>
-                            {user && (
-                                <Typography component="h1" className={classes.rootTitle}>These are all the landlords in {user.city}:</Typography>
-                            )}
-                        </Card>  
+                    <div className='col-2-top'>
+                       
                     </div>
-                    <div className='col-2-top-right'>
-                        <Card className={classes.rootTop}>
-                            <Link component={NavLink} to='/addlandlord' variant='body2'>
-                                <Typography component="h1" className={classes.rootTitle}>Don't see your landlord? Add them here!</Typography>
-                            </Link>
-                        </Card>
-                    </div>
-                    
-                    <div className='col-2-left'>
+                    <div className='col-2-content'>
                         <div>
                             <Card className={classes.rootLeft}>
+                                {user && (
+                                    <Typography component="h1" className={classes.rootTitle}>These are all the landlords in {user.city}:</Typography>
+                                )}
+                            </Card> 
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
-                                    <h1>A</h1>
+                                    <h1>A
+                                    </h1>
                                 </div>
                                 <Divider />
                                 {aLandlords && (aLandlords.map(landlord => (
@@ -142,9 +140,18 @@ const LandlordsInYourCity = () => {
                                                     <Rating name="read-only" value={landlord.rating} readOnly />
                                                 </div>    
                                             </Typography>
+                                            
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card> 
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -167,6 +174,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card> 
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -189,6 +204,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card> 
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -211,6 +234,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card> 
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -233,6 +264,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -255,6 +294,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -277,6 +324,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -299,6 +354,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -321,6 +384,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -343,6 +414,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -365,6 +444,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -387,6 +474,14 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
                             <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
@@ -409,14 +504,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
-                            </Card>   
-                        </div>
-                    </div>
-                    
-                        
-                    <div className='col-2-right'>
-                        <div>
-                            <Card className={classes.rootRight}>
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
+                            </Card> 
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>N</h1>
                                 </div>
@@ -437,8 +534,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>O</h1>
                                 </div>
@@ -459,8 +564,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>P</h1>
                                 </div>
@@ -481,8 +594,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>Q</h1>
                                 </div>
@@ -503,8 +624,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>R</h1>
                                 </div>
@@ -525,8 +654,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>S</h1>
                                 </div>
@@ -547,8 +684,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>T</h1>
                                 </div>
@@ -569,8 +714,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>U</h1>
                                 </div>
@@ -591,8 +744,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>V</h1>
                                 </div>
@@ -613,8 +774,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>W</h1>
                                 </div>
@@ -635,8 +804,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>X</h1>
                                 </div>
@@ -657,8 +834,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>Y</h1>
                                 </div>
@@ -679,8 +864,16 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
                             </Card>
-                            <Card className={classes.rootRight}>
+                            <Card className={classes.rootLeft}>
                                 <div className='letter-category'>
                                     <h1>Z</h1>
                                 </div>
@@ -701,9 +894,24 @@ const LandlordsInYourCity = () => {
                                         </CardContent>
                                     </div>
                                 )))}
-                            </Card>
+                                <Link
+                                    className={classes.link}
+                                    component="button"
+                                    variant="body2"
+                                    onClick={() => { window.location.href = '/addlandlord' }}
+                                >
+                                    Don't see your landlord? Add them here!
+                                </Link>
+                            </Card>  
                         </div>
                     </div>
+                    
+                        
+                    {/* <div className='col-2-right'>
+                        <div>
+                            
+                        </div>
+                    </div> */}
                     
                 </div>
                 <div className='city-landlords-col-3'>

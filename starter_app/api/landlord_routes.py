@@ -20,7 +20,7 @@ def create_landlord():
   db.session.add(landlord)
   db.session.commit()
 
-  return 'Successfully created'
+  return landlord.to_dict()
 
 
 @landlord_routes.route('/<landlord_param>') #get info for specific landlord

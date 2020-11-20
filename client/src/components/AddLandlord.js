@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink, Redirect, useHistory } from "react-router-dom";
 import { push } from 'react-router-redux'
 import { makeStyles } from "@material-ui/styles";
 import Button from "@material-ui/core/Button";
@@ -41,23 +41,31 @@ const AddLandlord = () => {
     const classes = useStyles();
     const user = useSelector(state => state.authentication.user)
     const cities = useSelector(state => state.entities.cities.cities)
-    const [name, setName] = useState("")
-    const [city, setCity] = useState("")
-    const dispatch = useDispatch()
+    const landlord = useSelector(state => state.entities.landlordPages)
+    const [name, setName] = useState("");
+    const [city, setCity] = useState("");
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(getCity())
     }, [dispatch])
 
+    
+    useEffect(() => {
+        console.log('dfgadfg', landlord)
+        if(landlord.id) {
+            history.push(`/landlords/${landlord.id}`)
+        }
+    }, [landlord])
+
     const handleSubmit = (e) => {
+        e.preventDefault()
         const form = {
             name,
             city
         }
         dispatch(addNewLandlord(form));
-        return (
-            <Redirect to='/landlords/9' />
-        )
     };
 
     // if (!user) {

@@ -37,6 +37,7 @@ export const addNewLandlord = (form) => async (dispatch) => {
 
     if (res.ok) {
         const landlord = await res.json();
+        console.log('this is the landlord: ', landlord)
         dispatch(setLandlord(landlord))
     }
 }
