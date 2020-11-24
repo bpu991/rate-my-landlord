@@ -60,7 +60,7 @@ function App() {
                     <LandlordsInYourCity/>
                 </Route>
 
-                <Route path="/">
+                <Route path="/" exact={true}>
                     <LandingPage />
                 </Route>
                 

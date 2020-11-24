@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Redirect } from "react-router-dom";
+
 
 import { makeStyles } from "@material-ui/styles";
 import Button from "@material-ui/core/Button";
@@ -10,18 +10,15 @@ import Select from '@material-ui/core/Select';
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
-import getCity from '../actions/city_actions'
-import { userActions } from "../actions/user_actions";
+
 import {getLandlordInfo} from '../actions/getInfo_actions';
 import {postLandlordReviews} from "../actions/review_actions";
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
+
 import writing from "../images/writing.jpg"
 
 import "../css-styles/review-form.css"
@@ -131,16 +128,6 @@ const ReviewForm = () => {
                                     <MenuItem value={4}>4</MenuItem>
                                     <MenuItem value={5}>5</MenuItem>
                                 </Select>
-                                {/* <Box component="fieldset" mb={3} borderColor="transparent">
-                                    <Typography component="legend">Controlled</Typography>
-                                    <Rating
-                                        name="simple-controlled"
-                                        value={value}
-                                        onChange={(event, newValue) => {
-                                            setValue(newValue);
-                                        }}
-                                    />
-                                </Box> */}
                             </CardContent>
                         <CardActions>
                             <Button className={classes.button}

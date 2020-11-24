@@ -9,6 +9,6 @@ search_routes = Blueprint("search", __name__)
 def search(search_input):
     
     search = "%{0}%".format(search_input)
-    results = Landlord.query.filter(Landlord.fullName.ilike(search)).options(joinedload(Landlord.city))
+    results = Landlord.query.filter(Landlord.fullName.ilike(search)).options(joinedload(Landlord.city)).limit(5).all()
     landlords = [landlord.search_dict() for landlord in results]
     return jsonify(landlords)

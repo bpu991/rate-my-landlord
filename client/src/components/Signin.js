@@ -46,6 +46,8 @@ const SignIn = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [demoEmail, setDemoEmail] = useState("demo@example.com");
+    const [demoPassword, setDemoPassword] = useState("password");
     const err = useSelector(state => state.errors.auth)
 
     const loggedOut = useSelector(state => !state.authentication.user)
@@ -59,6 +61,13 @@ const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(userActions.login(email, password));
+    };
+
+    const handleDemoSubmit = (e) => {
+        // setDemoEmail('demo@example.com')
+        // setDemoPassword('password')
+        e.preventDefault();
+        dispatch(userActions.login(demoEmail, demoPassword));
     };
 
     return (
@@ -112,15 +121,18 @@ const SignIn = () => {
                                                 value={password}
                                                 onChange={(e) => setPassword(e.target.value)}
                                             />
-                                            <Button
-                                                className={classes.button}
-                                                type='submit'
-                                                fullWidth
-                                                variant='contained'
-                                                color='primary'
-                                                size='large'>
-                                                Sign In
-                                            </Button>
+                                            <div className='button-section'>
+                                                <Button
+                                                    className={classes.button}
+                                                    type='submit'
+                                                    fullWidth
+                                                    variant='contained'
+                                                    color='primary'
+                                                    size='large'>
+                                                    Sign In
+                                                </Button>
+                                                
+                                            </div>
                                         </CardContent>
                                 
                                     <CardActions>
@@ -129,6 +141,17 @@ const SignIn = () => {
                                         </Link>
                                     </CardActions>
                                 </Card>
+                            </form>
+                            <form onSubmit={handleDemoSubmit}>
+                                <Button
+                                    className={classes.button}
+                                    type='submit'
+                                    fullWidth
+                                    variant='contained'
+                                    color='primary'
+                                    size='large'>
+                                    Demo
+                                </Button>
                             </form>
                         </div>
                     </Container>

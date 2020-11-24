@@ -22,9 +22,7 @@
   overflow: scroll;
 }
 
-/* .login-col-3 {
-    background-image: url('../images/town-2.png');
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-} */
+.button-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

@@ -85,11 +85,6 @@ const SignUp = () => {
                     <Container component='main' maxWidth='xs'>
                         <div className={classes.space}>
                             <form onSubmit={handleSubmit}>
-                                {/* {(err) ? (
-                                    <Typography variant="caption" color="error">
-                                        {err.errors}
-                                    </Typography>
-                                ) : (null)} */}
                                 <Card className={classes.root}>
                                     <CardMedia
                                         className={classes.media}

@@ -74,6 +74,7 @@ const LandlordProfile = () => {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const dispatch = useDispatch();
+    
     useEffect(() => {
         dispatch(getSpecificLandlord(params.landlordId))
         dispatch(getReview(params.landlordId))
@@ -93,7 +94,7 @@ const LandlordProfile = () => {
         }
         dispatch(postLandlordReviews(form));
     };
-
+    
     return (
         <main>
             <NavBar />
