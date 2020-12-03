@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: 10,
         marginTop: 15,
         marginBottom: 15,
-        maxWidth: 100
+        width: 400
     }, 
 
     buttonDemo: {
