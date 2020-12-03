@@ -27,8 +27,13 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: 10,
         marginTop: 15,
         marginBottom: 15,
-        maxWidth: 100,
+        maxWidth: 100
     }, 
+
+    buttonDemo: {
+        maxWidth: 600
+    },
+
     root: {
         width: "120%",
     },
@@ -80,7 +85,7 @@ const SignIn = () => {
                 <div className='login-col-2'>
                     <Container component='main' maxWidth='xs'>
                         <div className={classes.space}>
-                            <form onSubmit={handleSubmit}>
+                            {/* <form onSubmit={handleSubmit}> */}
                                 {(err) ? (
                                     <Typography variant="caption" color="error">
                                         {err.errors}
@@ -96,42 +101,57 @@ const SignIn = () => {
                                             <Typography gutterBottom variant="h5" component="h2">
                                                 Login
                                             </Typography>
-                                            <TextField
-                                                variant='outlined'
-                                                margin='normal'
-                                                required
-                                                fullWidth
-                                                id='email'
-                                                label='Email Address'
-                                                name='email'
-                                                autoComplete='email'
-                                                autoFocus
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}></TextField>
-                                            <TextField
-                                                variant='outlined'
-                                                margin='normal'
-                                                required
-                                                fullWidth
-                                                name='password'
-                                                label='Password'
-                                                type='password'
-                                                id='password'
-                                                autoComplete='current-password'
-                                                value={password}
-                                                onChange={(e) => setPassword(e.target.value)}
-                                            />
-                                            <div className='button-section'>
-                                                <Button
-                                                    className={classes.button}
-                                                    type='submit'
+                                            <form onSubmit={handleSubmit}>
+                                                <TextField
+                                                    variant='outlined'
+                                                    margin='normal'
+                                                    required
                                                     fullWidth
-                                                    variant='contained'
-                                                    color='primary'
-                                                    size='large'>
-                                                    Sign In
-                                                </Button>
-                                                
+                                                    id='email'
+                                                    label='Email Address'
+                                                    name='email'
+                                                    autoComplete='email'
+                                                    autoFocus
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}></TextField>
+                                                <TextField
+                                                    variant='outlined'
+                                                    margin='normal'
+                                                    required
+                                                    fullWidth
+                                                    name='password'
+                                                    label='Password'
+                                                    type='password'
+                                                    id='password'
+                                                    autoComplete='current-password'
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                />
+                                                <div className='button-section'>
+                                                    <Button
+                                                        className={classes.button}
+                                                        type='submit'
+                                                        fullWidth
+                                                        variant='contained'
+                                                        color='primary'
+                                                        size='large'>
+                                                        Sign In
+                                                    </Button>  
+                                                    
+                                                </div>
+                                            </form>
+                                            <div className='button-section'>
+                                                <form onSubmit={handleDemoSubmit}>
+                                                     <Button
+                                                        className={classes.button}
+                                                        type='submit'
+                                                        fullWidth
+                                                        variant='contained'
+                                                        color='primary'
+                                                        size='large'>
+                                                        Demo
+                                                    </Button>
+                                                </form>
                                             </div>
                                         </CardContent>
                                 
@@ -141,18 +161,8 @@ const SignIn = () => {
                                         </Link>
                                     </CardActions>
                                 </Card>
-                            </form>
-                            <form onSubmit={handleDemoSubmit}>
-                                <Button
-                                    className={classes.button}
-                                    type='submit'
-                                    fullWidth
-                                    variant='contained'
-                                    color='primary'
-                                    size='large'>
-                                    Demo
-                                </Button>
-                            </form>
+                            {/* </form> */}
+                            
                         </div>
                     </Container>
                 </div>

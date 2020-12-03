@@ -196,7 +196,7 @@ const LandlordProfile = () => {
                             </div>
                         )}
                         <div className='review-list'>
-                            {reviews && (reviews.map(review => (
+                            {reviews && reviews.length > 0 ? (reviews.map(review => (
                                 <div className={classes.rootGrid}>
                                         <Card className={classes.root} m={12}>
                                             <CardContent>
@@ -214,7 +214,10 @@ const LandlordProfile = () => {
                                             </CardContent>
                                         </Card>
                                 </div>
-                            )))}
+                            ))) : (
+                                <h1>hello</h1>
+                            )}
+                            
                         </div>
                     </div>
                 </div>
