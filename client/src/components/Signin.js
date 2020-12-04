@@ -98,9 +98,11 @@ const SignIn = () => {
                                             title="Contemplative Reptile"
                                         />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component="h2">
-                                                Login
-                                            </Typography>
+                                            <div className='card-header'>
+                                                <Typography gutterBottom variant="inherit" component="h2">
+                                                    Login
+                                                </Typography>
+                                            </div>    
                                             <form onSubmit={handleSubmit}>
                                                 <TextField
                                                     variant='outlined'

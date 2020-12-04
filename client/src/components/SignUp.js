@@ -92,9 +92,11 @@ const SignUp = () => {
                                         title="Signup"
                                     />
                                     <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h2">
-                                            Signup
-                                        </Typography>
+                                        <div className='card-header'>
+                                            <Typography gutterBottom variant="inherit" component="h2">
+                                                Signup
+                                            </Typography>
+                                        </div>
                                         <TextField
                                             variant='outlined'
                                             margin='normal'
