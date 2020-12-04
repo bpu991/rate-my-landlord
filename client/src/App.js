@@ -8,7 +8,7 @@ import {
     makeStyles,
 } from "@material-ui/core/styles";
 
-
+import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/Signin";
@@ -37,35 +37,36 @@ function App() {
     <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-            <Switch>
-                <Route exact path='/login'>
-                    <SignIn />
-                </Route>
+            <div>
+                <Switch>
+                    <Route exact path='/login'>
+                        <SignIn />
+                    </Route>
 
-                <Route exact path='/signup'>
-                    <SignUp />
-                </Route>
-                
-                <Route path="/landlords/:landlordId">
-                    <LandlordProfile />
-                </Route>
+                    <Route exact path='/signup'>
+                        <SignUp />
+                    </Route>
+                    
+                    <Route path="/landlords/:landlordId">
+                        <LandlordProfile />
+                    </Route>
 
-                <Route path="/createform">
-                    <ReviewForm />
-                </Route>
-                <Route path="/addlandlord">
-                    <AddLandlord />
-                </Route>
-                <Route path="/:cityId/:userId">
-                    <LandlordsInYourCity/>
-                </Route>
+                    <Route path="/createform">
+                        <ReviewForm />
+                    </Route>
+                    <Route path="/addlandlord">
+                        <AddLandlord />
+                    </Route>
+                    <Route path="/:cityId/:userId">
+                        <LandlordsInYourCity/>
+                    </Route>
 
-                <Route path="/" exact={true}>
-                    <LandingPage />
-                </Route>
-                
-                
-            </Switch>
+                    <Route path="/" exact={true}>
+                        <LandingPage />
+                    </Route>
+                </Switch>
+            </div>
+            <Footer />
         </BrowserRouter>
     </ThemeProvider>
   );
