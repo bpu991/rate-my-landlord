@@ -92,13 +92,13 @@ const NavBar = () => {
     return (
         <div className='navbar-main'>
             <div className='navbar-col-1'>
-            
-            </div>
-
-            <div className='navbar-col-2'>
                 <a href='/'>
                     <img className='nav-bar-logo' href='/' src={logo} />
                 </a>
+            </div>
+
+            <div className='navbar-col-2'>
+                
             </div>
 
             <div className='navbar-col-3'>

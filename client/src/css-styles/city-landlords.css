@@ -1,8 +1,8 @@
 .city-landlords-main {
     width: 100%;
-    height: 90.5vh;
+    height: 1210px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1fr 0.7fr 1fr;
     overflow: hidden;
     background-image: url('../images/city-life.png');
     background-position: center;
@@ -18,7 +18,7 @@
 }
 
 .city-landlords-col-2 {
-    display: grid;
+    display: inline-block;
     /* grid-template-columns: 1fr 1fr; */
     grid-template-rows: 0.1fr 1fr;
     overflow: auto

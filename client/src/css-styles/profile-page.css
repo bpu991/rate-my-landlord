@@ -1,8 +1,8 @@
 .profile-page-main {
     width: 100%;
-    height: 96vh;
+    height: 1210px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: #F4F8F7;
     background-image: url('../images/sunset-city.png');
     background-position: center;

@@ -25,7 +25,8 @@ import '../css-styles/profile-page.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "70%",
+        width: "80%",
+        maxWidth: '100%',
         marginBottom: 40,
     },
     space: {
@@ -195,7 +196,7 @@ const LandlordProfile = () => {
                                 </div>
                             </div>
                         )}
-                        <div className='review-list'>
+                        {/* <div className='review-list'>
                             {reviews && reviews.length > 0 ? (reviews.map(review => (
                                 <div className={classes.rootGrid}>
                                         <Card className={classes.root} m={12}>
@@ -218,6 +219,29 @@ const LandlordProfile = () => {
                                 <h1>hello</h1>
                             )}
                             
+                        </div> */}
+                        <div className='review-list'>
+                            {reviews && (reviews.map(review => (
+                                <div className={classes.rootGrid}>
+                                    <Card className={classes.root} m={12}>
+                                        <CardContent>
+                                            <Typography component="h1" className={classes.title}>
+                                                {review.title}
+                                            </Typography>
+                                            <Typography variant="h5" component="h3">
+                                                <Box component="fieldset" mb={3} borderColor="transparent">
+                                                    <Rating name="read-only" value={review.rating} readOnly />
+                                                </Box>
+                                            </Typography>
+                                            <Typography variant="body2" component="p">
+                                                {review.content}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </div>
+            
+                            )))}
+
                         </div>
                     </div>
                 </div>

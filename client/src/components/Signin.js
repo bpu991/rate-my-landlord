@@ -95,7 +95,6 @@ const SignIn = () => {
                                         <CardMedia
                                             className={classes.media}
                                             image={login}
-                                            title="Contemplative Reptile"
                                         />
                                         <CardContent>
                                             <div className='card-header'>

@@ -53,7 +53,7 @@ const AddLandlord = () => {
 
     
     useEffect(() => {
-        console.log('dfgadfg', landlord)
+        // console.log('dfgadfg', landlord)
         if(landlord.id) {
             history.push(`/landlords/${landlord.id}`)
         }
