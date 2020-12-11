@@ -16,13 +16,13 @@
 - ORM: SQLAlchemy
 
 **Features**
-[x] User auth that allows users to login, logout and sign-up
-[x] A landing page with a full-text search bar that allows users to search the database for landlords
-[x] A navbar available on every webpage with links to login/signup routes, logout route and link to your city's landlord database (if already logged in)
-[x] A demo login that allows new users to fully experience the app without having to sign up
-[x] Profile pages for each individual landlord that displays their rating and all of their reviews
-[x] A review form for authenticated users that lets users write their own reviews
-[x] A form that allows authorized users to add a new landlord to the database
+- [x] User auth that allows users to login, logout and sign-up
+- [x] A landing page with a full-text search bar that allows users to search the database for landlords
+- [x] A navbar available on every webpage with links to login/signup routes, logout route and link to your city's landlord database (if already logged in)
+- [x] A demo login that allows new users to fully experience the app without having to sign up
+- [x] Profile pages for each individual landlord that displays their rating and all of their reviews
+- [x] A review form for authenticated users that lets users write their own reviews
+- [x] A form that allows authorized users to add a new landlord to the database
 
 **Tables**
 1. **Users**
@@ -45,7 +45,7 @@
     - landlord_id (belongs to landlord)
     - user_id (belongs to user)
 
-**Notable Routes**
+**Important Routes**
 1. `/api/session/signup` Signup
     - A route with a "POST" method that recieves the user input data from the front-end as json  and stores it in the database
 2. `/api/session/login` Login
