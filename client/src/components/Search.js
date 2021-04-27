@@ -13,7 +13,7 @@ import {getAllLandlords} from "../actions/landlord_actions";
 import "../css-styles/search-bar.css"
 const useStyles = makeStyles((theme) => ({
     root: {
-        minWidth: 275,
+        minWidth: 274.9,
         maxHeight: 100,
     },
     title: {
