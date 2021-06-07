@@ -10,6 +10,7 @@ export const setSearch = (search) => {
 const searchLandlords = (searchItem) => async (dispatch) => {
 
     const res = await fetch(`/api/search/${searchItem}`)
+    
     if (res.ok) {
         const search = await res.json();
         dispatch(setSearch(search))

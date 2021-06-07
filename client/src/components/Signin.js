@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     root: {
-        width: "120%",
+        width: "120%"
     },
     rating: {
         width: 400,
@@ -91,7 +91,7 @@ const SignIn = () => {
                                         {err.errors}
                                     </Typography>
                                 ) : (null)}
-                                <Card className={classes.root}>
+                                <Card className='login-card'>
                                         <CardMedia
                                             className={classes.media}
                                             image={login}

@@ -1,8 +1,8 @@
 .signup-page-main {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     width: 100%;
-    min-height: 1230px;
+    min-height: 90vh;
     background-image: url('../images/signup-background.png');
     background-position: center;
     background-size: cover;
@@ -20,4 +20,10 @@
   display: flex;
   justify-content: center;
   color: #4D8ABE;
+}
+
+.signup-card {
+  width: 125%;
+  height: 70%;
+  margin-bottom: 100px;
 }
