@@ -85,7 +85,7 @@ const SignUp = () => {
                     <Container component='main' maxWidth='xs'>
                         <div className={classes.space}>
                             <form onSubmit={handleSubmit}>
-                                <Card className={classes.root}>
+                                <Card className='signup-card'>
                                     <CardMedia
                                         className={classes.media}
                                         image={signup}
