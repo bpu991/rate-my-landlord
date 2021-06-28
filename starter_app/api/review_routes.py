@@ -42,10 +42,9 @@ def create_review():
 
     reviews = Review.query.filter(landlord_id == Review.landlord_id).order_by(Review.id.desc())
     ratings_list = [review.get_rating() for review in reviews]
-    print("Ratings List -------------------------------", ratings_list)
     landlord = Landlord.query.filter(landlord_id == Landlord.id).first()
     average = sum(ratings_list) / len(ratings_list)
-    print("this is the rating--------------: ", landlord.rating)
+ 
     # if landlord.rating == 0 or landlord.rating == None:
     #     landlord.rating = float(rating)
     #     print("this is the rating--------------: ", landlord.rating)

@@ -35,8 +35,12 @@ const Search = () => {
     }, [dispatch])
 
     const handleInput = async (e) => {
-        setInput(e.target.value)
-        dispatch(searchLandlords(e.target.value))
+        setInput(e.target.value);
+
+        if (input.length > 3 ) {
+            dispatch(searchLandlords(e.target.value));
+        }
+        
     }
 
     return (
