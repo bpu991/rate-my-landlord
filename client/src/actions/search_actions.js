@@ -7,7 +7,19 @@ export const setSearch = (search) => {
     };
 };
 
+
+export const resetSearch = () => {
+    return {
+        type: searchConstants.RESET_SEARCH,
+    };
+};
+
 const searchLandlords = (searchItem) => async (dispatch) => {
+
+    if (searchItem.length < 5) {
+        dispatch(resetSearch())
+        return
+    }
 
     const res = await fetch(`/api/search/${searchItem}`)
     
