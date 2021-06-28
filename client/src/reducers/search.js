@@ -5,6 +5,9 @@ export default function reducer(state = [], action) {
         case searchConstants.SET_SEARCH: {
             return action.search
         }
+        case searchConstants.RESET_SEARCH: {
+            return []
+        }
         default: {
             return state
         }
