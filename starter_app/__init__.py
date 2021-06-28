@@ -25,7 +25,7 @@ app.register_blueprint(city_routes, url_prefix='/api/city')
 app.register_blueprint(review_routes, url_prefix='/api/reviews')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 db.init_app(app)
-# flask_whooshalchemyplus.init_app(app)
+
 Migrate(app, db)
 
 # create login manager
