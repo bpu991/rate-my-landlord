@@ -10,7 +10,7 @@ RUN ["pip", "install", "flask-migrate"]
 RUN ["pip", "install", "flask-cors"]
 RUN ["pip", "install", "flask-wtf"]
 RUN ["pip", "install", "flask-login"]
-RUN ["pip", "install", "dotenv"]
+RUN ["pip", "install", "python-dotenv"]
 
 
 # Build our React App
