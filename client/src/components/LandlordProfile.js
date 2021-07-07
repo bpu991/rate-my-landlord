@@ -79,7 +79,7 @@ const LandlordProfile = () => {
     useEffect(() => {
         dispatch(getSpecificLandlord(params.landlordId))
         dispatch(getReview(params.landlordId))
-    }, [dispatch])
+    }, [dispatch, reviews])
 
     useEffect(() => {
         dispatch(getLandlordInfo())
@@ -94,6 +94,7 @@ const LandlordProfile = () => {
             user: user.id
         }
         dispatch(postLandlordReviews(form));
+        window.location.reload(false);
     };
     
     return (
