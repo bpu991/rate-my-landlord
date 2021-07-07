@@ -6,6 +6,7 @@ COPY . .
 # Install Python Dependencies
 RUN ["pip", "install", "-r", "requirements.txt"]
 RUN ["pip", "install", "psycopg2"]
+RUN ["pip", "install", "flask-migrate"]
 
 
 # Build our React App
