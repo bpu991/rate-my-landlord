@@ -53,7 +53,7 @@ const AddLandlord = () => {
 
     
     useEffect(() => {
-        // console.log('dfgadfg', landlord)
+       
         if(landlord.id) {
             history.push(`/landlords/${landlord.id}`)
         }
@@ -68,11 +68,7 @@ const AddLandlord = () => {
         dispatch(addNewLandlord(form));
     };
 
-    // if (!user) {
-    //     return (
-    //         <Redirect to='/login' />
-    //     )
-    // }
+    
 
     return (
         <>
