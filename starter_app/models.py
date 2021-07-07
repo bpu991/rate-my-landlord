@@ -75,11 +75,6 @@ class Landlord(db.Model):
       "city": self.city.cityName
     }
 
-  # def landlord_info(self):
-  #   return {
-  #     "id": self.id,
-  #     ""
-  #   }
 class City(db.Model):
   __tablename__ = 'cities'
 
