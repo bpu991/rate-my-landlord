@@ -7,6 +7,9 @@ COPY . .
 RUN ["pip", "install", "-r", "requirements.txt"]
 RUN ["pip", "install", "psycopg2"]
 RUN ["pip", "install", "flask-migrate"]
+RUN ["pip", "install", "flask-cors"]
+RUN ["pip", "install", "flask-wtf"]
+RUN ["pip", "install", "flask-login"]
 
 
 # Build our React App
