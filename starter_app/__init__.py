@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
-# import flask_whooshalchemyplus
+
 
 from starter_app.models import db, User, Landlord, Review, City
 from starter_app.api.user_routes import user_routes
