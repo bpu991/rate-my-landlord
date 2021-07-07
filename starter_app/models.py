@@ -2,8 +2,7 @@ from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
-# import flask_whooshalchemyplus
-# from whoosh.analysis import SimpleAnalyzer
+
 
 db = SQLAlchemy()
 
