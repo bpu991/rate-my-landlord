@@ -12,7 +12,7 @@ export const restoreCSRF = () => async (dispatch) => {
             dispatch(setCSRF(authData.csrf_token));
         }
         if (authData.current_user) {
-            //   Change to set current user dispatch call
+     
             dispatch(restore(authData.current_user));
         }
     }
