@@ -65,10 +65,11 @@
 }
 .landing-page-body {
     width: 100%;
-    height: 1230px;
-    z-index: -1;
+    height: 90vh;
+    /* z-index: -1; */
     background-image: url('../images/city.png');
     background-position: center;
+    padding-bottom: 15px;
     background-size: cover;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -81,8 +82,9 @@
     align-items: center;
     grid-column: 2/3;
     grid-row: 2/3;
-    padding-bottom: 20vh;
+    /* padding-bottom: 20vh; */
     padding-right: 3vh;
+    /* margin-bottom: 20px; */
 }
 
 .landing-page-logo{
