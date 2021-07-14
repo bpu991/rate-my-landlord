@@ -73,7 +73,7 @@ const AddLandlord = () => {
     return (
         <>
             <NavBar />
-            <div className='add-landlord-main'>
+            {/* <div className='add-landlord-main'>
                 <div className='add-landlord-col-1'>
 
                 </div>
@@ -137,6 +137,54 @@ const AddLandlord = () => {
 
                 </div>
 
+            </div> */}
+            <div className='addlandlord-root'>
+                <div className='addlandlord-col-1'>
+
+                </div>
+                <div className='addlandlord-col-2'>
+                    <div className='addlandlord-card'>
+                        <div className='addlandlord-card-col-1'>
+                            <div className='addlandlord-card-row-1'>
+                                <h1>Add Landlord</h1>
+                            </div>
+                            <div className='addlandlord-card-row-2'>
+                            <input
+                                    className='input-field'
+                                    type="text"
+                                    name="name"
+                                    placeholder="Full Name" 
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    autoComplete='off'
+                                /> 
+                            </div>
+                            <div className='addlandlord-card-row-3'>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                    className='addlandlord-select'
+                                >
+
+                                    {cities && (cities.map(city => (
+                                        <MenuItem value={city.id} key={city.id}>{city.cityName}</MenuItem>
+                                    )))}
+                                </Select>
+                            </div>
+                            <div className='addlandlord-card-row-4'>
+                                <button className='addlandlord-btn' onClick={handleSubmit}>Add Landlord</button>
+                            </div>
+                        </div>
+                        <div className='addlandlord-card-col-2'>
+
+                        </div>
+                    </div>
+                </div>
+                <div className='addlandlord-col-3'>
+
+                </div>            
             </div>
             
         </>      

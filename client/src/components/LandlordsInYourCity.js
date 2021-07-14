@@ -5,7 +5,7 @@ import { landlordsInYourCity } from '../actions/landlord_actions';
 import NavBar from "./NavBar";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-
+import image from '../images/signup-background.png'
 import Rating from '@material-ui/lab/Rating';
 
 import CardContent from '@material-ui/core/CardContent';
@@ -20,14 +20,13 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         maxWidth:'100%',
         marginBottom: 8,
-        display: "block"
+        display: "block",
+        // backgroundImage: `url(${image})`,
+        // backgroundPosition: 'center',
+        // backgroundSize: 'cover', 
+        // backgroundRepeat: 'no-repeat',
     },
-    // rootLeft: {
-    //     width: "180%",
-    //     maxWidth: '180%',
-    //     marginBottom: 8,
-    //     display: "block"
-    // },
+
     rootTop: {
         width: "60%",
         maxWidth: '160%',
@@ -44,7 +43,9 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         paddingLeft: '3%',
-        marginBottom: 8
+        marginBottom: 8,
+        width: '100%',
+
     },
     pos: {
         marginBottom: 12,

@@ -79,7 +79,7 @@ const LandlordProfile = () => {
     useEffect(() => {
         dispatch(getSpecificLandlord(params.landlordId))
         dispatch(getReview(params.landlordId))
-    }, [dispatch, reviews])
+    }, [dispatch])
 
     useEffect(() => {
         dispatch(getLandlordInfo())
