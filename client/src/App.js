@@ -19,6 +19,7 @@ import LandlordProfile from "./components/LandlordProfile";
 import { themeObj } from './theme'
 import { restoreCSRF } from "./actions/csrf_actions";
 import { CssBaseline } from '@material-ui/core';
+import "./css-styles/landing-page.css";
 const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: "93vh",
@@ -66,7 +67,10 @@ function App() {
                     </Route>
                 </Switch>
             </div>
-            <Footer />
+            <div className='footer'>
+              <Footer />  
+            </div>
+            
         </BrowserRouter>
     </ThemeProvider>
   );
