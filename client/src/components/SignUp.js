@@ -77,7 +77,7 @@ const SignUp = () => {
     return (
         <>
             <NavBar />
-            <div className='signup-page-main'>
+            {/* <div className='signup-page-main'>
                 <div className='signup-col-1'>
 
                 </div>
@@ -172,6 +172,83 @@ const SignUp = () => {
 
                 </div>
 
+            </div> */}
+            <div className='signup-root'>
+                <div className='signup-col-1'>
+
+                </div>
+                <div className='signup-col-2'>
+                    <div className='signup-card'>
+                        <div className='signup-card-col-1'>
+                            <div className='signup-card-row-1'>
+                                <h1>Signup</h1>
+                            </div>
+                            <div className='signup-card-row-2'>
+                            <input
+                                    className='input-field'
+                                    type="text"
+                                    name="username"
+                                    placeholder="Username" 
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    autoComplete='off'
+                                /> 
+                            </div>
+                            <div className='signup-card-row-3'>
+                                <input  
+                                    className='input-field'
+                                    type="text"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={email} 
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    autoComplete='off'
+                                />
+                            </div>
+                            <div className='signup-card-row-4'>
+                                <TextField
+                                    className='input-field'
+                                    id="standard-password-input"
+                                    placeholder='Password'
+                                    // label="Password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    autoComplete='off'
+                                />
+
+                            </div>
+                            <div className='signup-card-row-5'>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={cityId}
+                                    onChange={(e) => setCityId(e.target.value)}
+                                    className='signup-select'
+                                >
+
+                                    {cities && ( cities.map(city => (
+                                        <MenuItem value={city.id} key={city.id}>{city.cityName}</MenuItem>
+                                    )))}
+                                </Select>
+                            </div>
+                            <div className='signup-card-row-6'>
+                                <button className='signup-btn' onClick={handleSubmit}>Signup</button>
+                            </div>
+                            <div className='signup-card-row-7'>
+                                <a href={`/login`}>
+                                    login here!
+                                </a>
+                            </div>
+                        </div>
+                        <div className='signup-card-col-2'>
+
+                        </div>
+                    </div>
+                </div>
+                <div className='signup-col-3'>
+
+                </div>            
             </div>
         </>
     );

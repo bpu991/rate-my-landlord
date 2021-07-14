@@ -78,7 +78,7 @@ const SignIn = () => {
     return (
         <>
             <NavBar />
-            <div className='login-page-main'>
+            <div className='login-root'>
                 <div className='login-col-1'>
 
                 </div>
@@ -91,77 +91,49 @@ const SignIn = () => {
                                         {err.errors}
                                     </Typography>
                                 ) : (null)}
-                                <Card className='login-card'>
-                                        <CardMedia
-                                            className={classes.media}
-                                            image={login}
+                            <div className='login-card'>
+                                <div className='login-card-col-1'>
+                                    <div className='login-card-row-1'>
+                                        <h1>Login</h1>
+                                    </div>
+                                    <div className='login-card-row-2'>
+                                        <input
+                                            className='input-field'
+                                            name='email'
+                                            placeholder='Email'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                         />
-                                        <CardContent>
-                                            <div className='card-header'>
-                                                <Typography gutterBottom variant="inherit" component="h2">
-                                                    Login
-                                                </Typography>
-                                            </div>    
-                                            <form onSubmit={handleSubmit}>
-                                                <TextField
-                                                    variant='outlined'
-                                                    margin='normal'
-                                                    required
-                                                    fullWidth
-                                                    id='email'
-                                                    label='Email Address'
-                                                    name='email'
-                                                    autoComplete='email'
-                                                    autoFocus
-                                                    value={email}
-                                                    onChange={(e) => setEmail(e.target.value)}></TextField>
-                                                <TextField
-                                                    variant='outlined'
-                                                    margin='normal'
-                                                    required
-                                                    fullWidth
-                                                    name='password'
-                                                    label='Password'
-                                                    type='password'
-                                                    id='password'
-                                                    autoComplete='current-password'
-                                                    value={password}
-                                                    onChange={(e) => setPassword(e.target.value)}
-                                                />
-                                                <div className='button-section'>
-                                                    <Button
-                                                        className={classes.button}
-                                                        type='submit'
-                                                        fullWidth
-                                                        variant='contained'
-                                                        color='primary'
-                                                        size='large'>
-                                                        Sign In
-                                                    </Button>  
-                                                    
-                                                </div>
-                                            </form>
-                                            <div className='button-section'>
-                                                <form onSubmit={handleDemoSubmit}>
-                                                     <Button
-                                                        className={classes.button}
-                                                        type='submit'
-                                                        fullWidth
-                                                        variant='contained'
-                                                        color='primary'
-                                                        size='large'>
-                                                        Demo
-                                                    </Button>
-                                                </form>
-                                            </div>
-                                        </CardContent>
-                                
-                                    <CardActions>
-                                        <Link component={NavLink} to='/signup' variant='body2'>
-                                            Don't have an account? Sign up
-                                        </Link>
-                                    </CardActions>
-                                </Card>
+                                    </div>
+                                    <div className='login-card-row-3'>
+                                        <TextField
+                                            className='input-field'
+                                            name='password'
+                                            placeholder='Password'
+                                            type="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className='login-card-row-4'>
+                                        <button onClick={handleSubmit}>Login</button>
+                                    </div>
+
+                                    <div className='login-card-row-5'>
+                                        <button onClick={handleDemoSubmit}>Demo</button>
+                                    </div>
+
+                                    <div className='login-card-row-6'>
+                                        <a href={`/signup`}>
+                                            Sign-up here!
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div className='login-card-col-2'>
+
+                                </div>
+                            </div>
                             {/* </form> */}
                             
                         </div>

@@ -1,13 +1,13 @@
-.login-page-main {
+/* .login-page-main {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
   width: 100%;
-  /* min-height: 1230px; */
+  min-height: 1230px;
   min-height: 90vh;
   background-image: url('../images/town.jpg');
   background-position: center;
   background-size: cover;
-}
+} */
 
 /* .login-col-1 {
   background-image: url('../images/town-1.png');
@@ -15,11 +15,10 @@
     background-size: cover;
     overflow: hidden;
 } */
-.login-col-2{
+/* .login-col-2{
   display: flex;
   justify-content: center;
   padding-right: 10%;
-  /* padding-top: 10%; */
   overflow: auto;
 }
 
@@ -35,6 +34,140 @@
 
 .login-card {
   width: 125%;
-  height: 100%;
+  height: max-content;
   margin-bottom: 100px;
+} */
+
+.login-root {
+    height: 90vh;
+    width:100%;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    background-image: url('../images/town.jpg');
+    background-position: center;
+}
+
+.login-col-2{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.login-card {
+    height: 400px;
+    width: 550px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5%;
+    background-color: white;
+ 
+}
+
+.login-card-col-1 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; */
+
+}
+
+.login-card-row-1 {
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-row-2 {
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-row-3 {
+    grid-row: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-card-row-4 {
+    grid-row: 4/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-row-5 {
+    grid-row: 5/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-row-6 {
+  grid-row: 6/7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card-col-2 {
+    background-image: url('../images/login.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 5% 5% 0;
+}
+.input-field {
+   border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:70%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:black;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    color:#fff;
+	background-color:#1180AC;
+	outline: none;
+    border: 0;
+    color: #fff;
+	text-transform:uppercase;
+	/* margin-top:50px; */
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+
+@media screen and (max-height: 600px){
+    .login-card {
+      height: 300px;
+      width: 550px;
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 5%;
+      background-color: white;
+      margin-bottom: 50px;
+    }
+
+    button {
+    width: 100px;
+    height: 25px;
+    color:#fff;
+	background-color:#1180AC;
+	outline: none;
+    border: 0;
+    color: #fff;
+	text-transform:uppercase;
+	/* margin-top:50px; */
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
 }
