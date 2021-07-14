@@ -37,7 +37,7 @@ const Search = () => {
     const handleInput = async (e) => {
         setInput(e.target.value);
 
-        if (input.length > 3 ) {
+        if (input.length > 1 ) {
             dispatch(searchLandlords(e.target.value));
         }
         

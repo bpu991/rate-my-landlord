@@ -16,7 +16,7 @@ export const resetSearch = () => {
 
 const searchLandlords = (searchItem) => async (dispatch) => {
 
-    if (searchItem.length < 5) {
+    if (searchItem.length < 3) {
         dispatch(resetSearch())
         return
     }

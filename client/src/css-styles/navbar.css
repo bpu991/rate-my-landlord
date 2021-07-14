@@ -45,4 +45,5 @@
 .navbar-col-7 {
     display: flex;
     justify-content: center;
+    align-items: center;
 }

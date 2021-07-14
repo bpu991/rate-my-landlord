@@ -128,7 +128,12 @@ const NavBar = () => {
                         <IconButton component={NavLink} to={`/${user.city_id}/${user.id}`} className={classes.button} size="Large">
                                 <LocationCityIcon size="Large"/>
                         </IconButton>
+                        <div styles={{paddingTop: '10px'}}>
                         <Button className={classes.button} onClick={handleSignout} size="Large">Logout</Button>
+                        </div>
+                         
+
+                       
                         
                     </>
                 )}
